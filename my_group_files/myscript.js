@@ -28,7 +28,7 @@ function validateForm(){
     else {
         var regex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
         if(regex.test(pswd) === false){
-            printerText('pswd', "Min: 6 character in form Asd4$1")
+            printerText("pswdError", "Min: 6 character in form Asd4$1");
         }
         else {
             printerText('pswdError', "")

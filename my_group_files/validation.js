@@ -9,12 +9,10 @@ function validateForm() {
   const firstname = document.demoForm.firstname.value;
   const lastname = document.demoForm.lastname.value;
   const email = document.demoForm.email.value;
-  const mobile = document.demoForm.mobile.value;
-  const country = document.demoForm.country.value;
-  const gender = document.demoForm.gender.value;
-  const pswd = document.demoForm.pswd.value;
-  const hobbies = [];
-  const checkboxes = document.getElementsByName("hobbies[]");
+  const pswd1 = document.demoForm.pswd1.value;
+  const pswd2 = document.demoForm.pswd2.value;
+//   const hobbies = [];
+//   const checkboxes = document.getElementsByName("hobbies[]");
 
   for (var i = 0; i < checkboxes.length; i++) {
     if (checkboxes[i].checked) {
@@ -24,7 +22,7 @@ function validateForm() {
   }
 
   // Defining errorText variables with a default value
-  var firstnameError = (emailError = mobileError = countryError = genderError = pswdError = true);
+  var firstnameError = (emailError = lastnameError = pswdError = true);
   // Validate name
   if (firstname == "") {
     printerrtext("nameError", "Please enter your name");
@@ -51,21 +49,6 @@ function validateForm() {
     }
   }
 
-  // Validate mobile number
-  if (mobile == "") {
-    printerrtext("mobileError", "Please enter your mobile number");
-  } else {
-    var regex = /^[1-9]\d{9}$/;
-    if (regex.test(mobile) === false) {
-      printerrtext(
-        "mobileError",
-        "Please enter a valid 10 digit mobile number"
-      );
-    } else {
-      printerrtext("mobileError", "");
-      mobileError = false;
-    }
-  }
 
   // Validate Password
   if (pswd == "") {
@@ -80,21 +63,7 @@ function validateForm() {
     }
   }
 
-  // Validate country
-  if (country == "Select") {
-    printerrtext("countryErr", "Please select your country");
-  } else {
-    printerrtext("countryError", "");
-    countryError = false;
-  }
 
-  // Validate gender
-  if (gender == "") {
-    printerrtext("genderError", "Please select your gender");
-  } else {
-    printerrtext("genderError", "");
-    genderError = false;
-  }
 
   // Prevent the form from being submitted if there are any errtexts
   if (
@@ -106,29 +75,5 @@ function validateForm() {
       pswdError) == true
   ) {
     return false;
-  } else {
-    // Creating a string from input data for preview
-    var dataPreview =
-      "You've entered the following details: \n" +
-      "Full Name: " +
-      name +
-      "\n" +
-      "Email Address: " +
-      email +
-      "\n" +
-      "Mobile Number: " +
-      mobile +
-      "\n" +
-      "Country: " +
-      country +
-      "\n" +
-      "Gender: " +
-      gender +
-      "\n";
-    if (hobbies.length) {
-      dataPreview += "Hobbies: " + hobbies.join(", ");
-    }
-    // Display input data in a dialog box before submitting the form
-    alert(dataPreview);
-  }
+  } 
 }

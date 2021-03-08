@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>User Login Form</title>
+    <title>User signup Form</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
 
      <!-- Bootstrap CSS -->
@@ -11,7 +11,7 @@
   <body>
 
 <form name="demoForm" onsubmit="return validateForm()"  method="post">
-  <h2>Sign up</h2>
+  <h2>Create your account</h2>
     <section class="row">
       <label>First Name</label>  
       <input type="text" name="firstname">
@@ -28,12 +28,6 @@
     <input type="text" name="email">
     <div class="errorText" id="emailError"></div>
   </section>
-
-  <!-- <section class="row">
-    <label>Mobile Number</label>
-    <input type="text" name="mobile" maxlength="10">
-    <div class="errorText" id="mobileError"></div>
-  </section> -->
 
   <section class="row">
     <label>Password</label>
@@ -53,24 +47,30 @@
     <div class="errorText" id="addressError"></div>
   </section>
 
-
-
-
-
   <section class="row">
-  <label>Hobbies <i>(Optional)</i></label>
-    <div class="form-inline">
-      <label><input type="checkbox" name="hobbies[]" value="sports"> Coding</label>
-      <label><input type="checkbox" name="hobbies[]" value="read"> Reading</label>
-      <label><input type="checkbox" name="hobbies[]" value="read"> Sports</label>
-      <label><input type="checkbox" name="hobbies[]" value="music"> Music</label>
-    </div>
+    <label>Date of birth</label>
+    <input type="date" name="address">
+    <div class="errorText" id="addressError"></div>
   </section>
 
+
+  <!-- <section class="row">
+  <label>Hobbies</label>
+    <div class="form-inline">
+      <label><input type="checkbox" name="hobbies[]" value="sports">Coding</label>
+      <label><input type="checkbox" name="hobbies[]" value="read">Reading</label>
+      <label><input type="checkbox" name="hobbies[]" value="read">Sports</label>
+      <label><input type="checkbox" name="hobbies[]" value="music">Music</label>
+    </div>
+  </section> -->
+
+
+
   <section class="row">
-    <input type="submit"  value="Register">
+    <input type="submit"  value="Sign up">
   </section>
 </form>
+
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
